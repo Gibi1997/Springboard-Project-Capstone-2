@@ -1,0 +1,89 @@
+MODEL METRICS FILE:
+
+Model Overview:
+   Model Name: Gradient Boosting Classifier
+   Library: scikit-learn
+   Objective: Classification
+   Evaluation Method: Cross-validation (6-fold)
+   Primary Metric: F1-macro
+
+Final model features:
+   1.FLAG_OWN_CAR                                         
+   2.FLAG_OWN_REALTY                                      
+   3.CNT_CHILDREN                                         
+   4.AMT_INCOME_TOTAL                                     
+   5.FLAG_WORK_PHONE                                      
+   6.FLAG_PHONE                                           
+   7.FLAG_EMAIL                                           
+   8.CNT_FAM_MEMBERS                                                                               
+   9.CODE_GENDER_M                                        
+   10.NAME_INCOME_TYPE_Pensioner                           
+   11.NAME_INCOME_TYPE_State servant                       
+   12.NAME_INCOME_TYPE_Student                             
+   13.NAME_INCOME_TYPE_Working                             
+   14.NAME_EDUCATION_TYPE_Incomplete higher                
+   15.NAME_EDUCATION_TYPE_Other                            
+   16.NAME_EDUCATION_TYPE_Secondary / secondary special    
+   17.NAME_FAMILY_STATUS_Married                           
+   18.NAME_FAMILY_STATUS_Separated                         
+   19.NAME_FAMILY_STATUS_Single / not married              
+   20.NAME_FAMILY_STATUS_Widow                             
+   21.NAME_HOUSING_TYPE_Municipal apartment                
+   22.NAME_HOUSING_TYPE_Other                              
+   23.NAME_HOUSING_TYPE_With parents                       
+   24.AGE_YEARS                                            
+   25.EMPLOYED_YEARS
+
+Hyperparameters:
+   'subsample': 0.8, 
+   'n_estimators': 200, 
+   'min_samples_split': 5, 
+   'min_samples_leaf': 5, 
+   'max_features': None, 
+   'max_depth': 5, 
+   'learning_rate': 0.1
+
+Parameters:
+The model learned the following parameters during training:
+ 
+     Decision tree structures at each boosting stage
+     Feature split thresholds
+     Leaf node prediction values
+     Boosting weights for each tree
+
+These parameters are learned automatically from the data and stored internally in the trained model.
+
+
+Performance metrics:
+
+Before parameter tuning:
+
+Gradient Boosting for train data:
+  Mean F1-macro (CV): 0.7931
+  Std  F1-macro (CV): 0.0055
+
+Gradient Boosting Test set F1-macro: 0.4886
+                          precision    recall  f1-score   support
+
+           0               0.21      0.10      0.14       479
+           1               0.79      0.90      0.84      1766
+
+    accuracy                                    0.73      2245
+   macro avg         0.50      0.50      0.49      2245
+weighted avg        0.66      0.73      0.69      2245
+
+After parameter tuning:
+Best GB CV F1-macro for train data: 0.8316132963009505
+
+Optimal threshold: 0.5299999999999998
+Best F1-macro on test set: 0.479092446126925
+              precision    recall  f1-score   support
+
+           0              0.22      0.07      0.10       479
+           1              0.79      0.93      0.85      1766
+
+    accuracy                                   0.75      2245
+   macro avg        0.50      0.50      0.48      2245
+weighted avg       0.67      0.75      0.69      2245
+
+
